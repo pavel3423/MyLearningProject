@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="khmelov_tomcat_lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/khmelov_tomcat_lib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
