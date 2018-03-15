@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="commons-codec-1.10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/lib/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/gson-2.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/jstl-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/mysql-connector-java.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/lib/tomcat_lib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
