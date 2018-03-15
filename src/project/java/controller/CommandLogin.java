@@ -1,6 +1,7 @@
 package project.java.controller;
 
 import project.java.dao.dao.DAO;
+import project.java.entity.City;
 import project.java.entity.User;
 import project.java.filters.CookiesUser;
 
@@ -47,6 +48,8 @@ public class CommandLogin extends Action {
                 session.setAttribute("user", user);
                 session.setMaxInactiveInterval(60);
                 CookiesUser.setCookie(response, user);
+                List<City> cities = DAO.getDAO().city.getAll();
+                request.setAttribute("cities", cities);
                 return Actions.PROFILE.command;
             } else {
                 request.setAttribute(Message.MESSAGE, "Неверный пароль");
