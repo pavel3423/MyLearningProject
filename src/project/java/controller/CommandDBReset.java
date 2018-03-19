@@ -16,10 +16,14 @@ import java.text.ParseException;
 
 public class CommandDBReset extends Action {
     @Override
-    Action execute(HttpServletRequest request, HttpServletResponse response) throws ParseException, SQLException, NoSuchPaddingException, NoSuchAlgorithmException, IOException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
+    Action execute(HttpServletRequest request, HttpServletResponse response) {
         if (FormUtil.isPost(request)) {
-            Init.main(null);
-            request.setAttribute(Message.MESSAGE, "База данных сброшена");
+            try {
+                Init.resetDB();
+                request.setAttribute(Message.MESSAGE, "База данных сброшена");
+            } catch (SQLException e) {
+                request.setAttribute(Message.MESSAGE, "Ошибка сброса базы данных");
+            }
             request.getSession().invalidate();
             Cookie[] cookies = request.getCookies();
             for (Cookie cookie : cookies) {

@@ -28,7 +28,7 @@ public class ConnectionCreator {
     private static DataSource getDataSource() throws NamingException {
         if (dataSource == null) {
             InitialContext initialContext = new InitialContext();
-            dataSource = (DataSource) initialContext.lookup("java:/comp/env/jdbc/my_sql_akhmelev");
+            dataSource = (DataSource) initialContext.lookup("java:/comp/env/jdbc/my_sql_kozlov");
         }
         return dataSource;
     }

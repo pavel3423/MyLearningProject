@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Init {
-    public static void main(String[] args) {
+    public static void resetDB() throws SQLException {
 
         try (Connection connection = ConnectionCreator.getConnection()) {
             Statement statement = connection.createStatement();
@@ -113,8 +113,6 @@ public class Init {
             DAO.getDAO().car.create(new Car(0, 2, "X6", 3, 132000.0, 2018, 2));
             DAO.getDAO().car.create(new Car(0, 4, "E 200 4MATIC", 2, 137706.0, 2018, 3));
             DAO.getDAO().car.create(new Car(0, 4, "GLS", 4, 164700.0, 2018, 3));
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 }
