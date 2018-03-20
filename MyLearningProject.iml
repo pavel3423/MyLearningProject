@@ -32,5 +32,7 @@
     <orderEntry type="library" name="commons-codec-1.10" level="project" />
     <orderEntry type="library" name="khmelov_tomcat_lib" level="project" />
     <orderEntry type="library" name="khmelov_tomcat_lib" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.46-bin" level="project" />
   </component>
 </module>
