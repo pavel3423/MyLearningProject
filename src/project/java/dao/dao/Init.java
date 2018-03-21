@@ -115,4 +115,12 @@ public class Init {
             DAO.getDAO().car.create(new Car(0, 4, "GLS", 4, 164700.0, 2018, 3));
         }
     }
+
+    public static void main(String[] args) {
+        try {
+            Init.resetDB();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

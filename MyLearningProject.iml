@@ -34,5 +34,6 @@
     <orderEntry type="library" name="khmelov_tomcat_lib" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46-bin" level="project" />
+    <orderEntry type="library" name="tomcat-jdbc" level="project" />
   </component>
 </module>
