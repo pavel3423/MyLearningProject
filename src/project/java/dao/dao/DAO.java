@@ -7,7 +7,7 @@ public class DAO {
     public CityDAO city;
     public BrandDAO brand;
     public CarDAO car;
-    public BodyDAO body;
+    public CarClassDAO carClass;
     public YearDAO year;
 
     public static DAO getDAO() {
@@ -20,7 +20,7 @@ public class DAO {
                     dao.city = new CityDAO();
                     dao.brand = new BrandDAO();
                     dao.car = new CarDAO();
-                    dao.body = new BodyDAO();
+                    dao.carClass = new CarClassDAO();
                     dao.year = new YearDAO();
                 }
             }

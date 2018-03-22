@@ -31,8 +31,8 @@ public class CommandAllCarsUser extends Action {
         request.setAttribute("cars", cars);
         List<Brand> brands = DAO.getDAO().brand.getAll();
         request.setAttribute("brands", brands);
-        List<Body> bodies = DAO.getDAO().body.getAll();
-        request.setAttribute("bodies", bodies);
+        List<CarClass> carClasses = DAO.getDAO().carClass.getAll();
+        request.setAttribute("carClasses", carClasses);
         List<Year> years = DAO.getDAO().year.getAll();
         request.setAttribute("years", years);
         if (FormUtil.isPost(request)) {

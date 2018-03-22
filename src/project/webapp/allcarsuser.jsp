@@ -44,12 +44,12 @@
             <div class="col-md-2">
 
                 <select id="CarClass" name="CarClass" class="form-control">
-                    <c:forEach items="${bodies}" var="body">
-                        <option value="${body.id}"
-                                <c:if test="${body.id==car.carClass}">
+                    <c:forEach items="${carClasses}" var="carClass">
+                        <option value="${carClass.id}"
+                                <c:if test="${carClass.id==car.carClass}">
                                     selected
                                 </c:if>
-                        >${body.body}</option>
+                        >${carClass.carClass}</option>
                     </c:forEach>
                 </select>
             </div>

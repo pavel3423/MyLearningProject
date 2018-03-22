@@ -36,8 +36,8 @@
             <label class="col-md-4 control-label" for="CarClass">Класс</label>
             <div class="col-md-4">
                 <select id="CarClass" name="CarClass" class="form-control">
-                    <c:forEach items="${bodies}" var="body">
-                        <option value="${body.id}">${body.body}</option>
+                    <c:forEach items="${carClasses}" var="carClass">
+                        <option value="${carClass.id}">${carClass.carClass}</option>
                     </c:forEach>
                 </select>
             </div>

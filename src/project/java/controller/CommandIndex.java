@@ -1,7 +1,7 @@
 package project.java.controller;
 
 import project.java.dao.dao.DAO;
-import project.java.entity.Body;
+import project.java.entity.CarClass;
 import project.java.entity.Brand;
 import project.java.entity.Car;
 
@@ -17,8 +17,8 @@ public class CommandIndex extends Action {
         request.setAttribute("cars", cars);
         List<Brand> brands = DAO.getDAO().brand.getAll();
         request.setAttribute("brands", brands);
-        List<Body> bodies = DAO.getDAO().body.getAll();
-        request.setAttribute("bodies", bodies);
+        List<CarClass> carClasses = DAO.getDAO().carClass.getAll();
+        request.setAttribute("carClasses", carClasses);
         return null;
     }
 }
