@@ -8,7 +8,7 @@ public class FormUtil {
         return request.getMethod().toUpperCase().equals("POST");
     }
 
-    static String getString(String string, String regxp) throws ParseException {
+    static public String getString(String string, String regxp) throws ParseException {
         if (string.trim().matches(regxp)) {
             return string;
         } else {

@@ -52,7 +52,7 @@ public class CommandAllCarsUser extends Action {
                                 parseInt(request.getParameter("Brand")),
                                 FormUtil.getString(request.getParameter("Model"), "[A-Za-z0-9_А-Яа-яЁё ]+"),
                                 parseInt(request.getParameter("Body")),
-                                Double.parseDouble(request.getParameter("Price")),
+                                Double.parseDouble(request.getParameter("Price").replace(",", ".")),
                                 parseInt(request.getParameter("Year")),
                                 user.getId()
                         );

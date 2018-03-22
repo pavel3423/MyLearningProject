@@ -43,7 +43,7 @@
             </div>
             <div class="col-md-2">
 
-                <select id="Body" name="Body" class="form-control">
+                <select id="CarClass" name="CarClass" class="form-control">
                     <c:forEach items="${bodies}" var="body">
                         <option value="${body.id}"
                                 <c:if test="${body.id==car.carClass}">

@@ -1,7 +1,13 @@
 package project.java.entity;
 
+import project.java.controller.FormUtil;
+
+import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
+import java.text.ParseException;
 import java.util.Objects;
+
+import static java.lang.Integer.parseInt;
 
 public class Car implements Serializable {
     private int id;
@@ -20,6 +26,17 @@ public class Car implements Serializable {
         this.price = price;
         this.year = year;
         this.usersID = usersID;
+    }
+
+    public static Car getCar(User user, HttpServletRequest request) throws ParseException {
+        return new Car(0,
+                Integer.parseInt(request.getParameter("Brand")),
+                FormUtil.getString(request.getParameter("Model"), "[A-Za-z0-9_А-Яа-яЁё ]+"),
+                Integer.parseInt(request.getParameter("CarClass")),
+                Double.parseDouble(request.getParameter("Price").replace(",", ".")),
+                Integer.parseInt(request.getParameter("Year")),
+                user.getId());
+
     }
 
 

@@ -34,14 +34,7 @@ public class CommandAddCar extends Action {
         if (FormUtil.isPost(request)) {
             Car car;
             try {
-                car = new Car(0,
-                        Integer.parseInt(request.getParameter("Brand")),
-                        FormUtil.getString(request.getParameter("Model"), "[A-Za-z0-9_А-Яа-яЁё ]+"),
-                        Integer.parseInt(request.getParameter("CarClass")),
-                        Double.parseDouble(request.getParameter("Price").replace(",", ".")),
-                        Integer.parseInt(request.getParameter("Year")),
-                        user.getId()
-                );
+                car = Car.getCar(user, request);
             } catch (ParseException e) {
                 request.setAttribute(Message.MESSAGE, "Введены недопустимые символы");
                 return null;
