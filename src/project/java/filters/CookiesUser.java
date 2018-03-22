@@ -64,6 +64,9 @@ public class CookiesUser {
             return null;
         }
         List<User> users = DAO.getDAO().user.getAll(String.format("WHERE login='%s' and password='%s'", cookieLogin, cookiePassword));
-        return users.get(0);
+        if (users.size()>0){
+            return users.get(0);
+        }
+        return null;
     }
 }

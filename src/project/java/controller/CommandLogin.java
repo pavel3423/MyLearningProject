@@ -46,7 +46,7 @@ public class CommandLogin extends Action {
             String password = FormUtil.getString(request.getParameter("Password"), "[A-Za-z0-9_А-Яа-яЁё]+");
             if (user.getPassword().equals(password)) {
                 session.setAttribute("user", user);
-                session.setMaxInactiveInterval(60);
+                session.setMaxInactiveInterval(1);
                 CookiesUser.setCookie(response, user);
                 List<City> cities = DAO.getDAO().city.getAll();
                 request.setAttribute("cities", cities);

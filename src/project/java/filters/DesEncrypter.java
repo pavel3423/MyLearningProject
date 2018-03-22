@@ -38,9 +38,14 @@ class DesEncrypter {
         return new sun.misc.BASE64Encoder().encode(enc);
     }
 
-    public String decrypt(String str) throws IOException, IllegalBlockSizeException, BadPaddingException {
+    public String decrypt(String str) throws IOException, IllegalBlockSizeException {
         byte[] dec = new sun.misc.BASE64Decoder().decodeBuffer(str);
-        byte[] utf8 = dcipher.doFinal(dec);
+        byte[] utf8 = null;
+        try {
+            utf8 = dcipher.doFinal(dec);
+        } catch (BadPaddingException e) {
+            return null;
+        }
         return new String(utf8, "UTF8");
     }
 }
