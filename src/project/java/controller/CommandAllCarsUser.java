@@ -48,14 +48,7 @@ public class CommandAllCarsUser extends Action {
             } else {
                 try {
                     if (request.getParameter("Price") != "") {
-                        car = new Car(0,
-                                parseInt(request.getParameter("Brand")),
-                                FormUtil.getString(request.getParameter("Model"), "[A-Za-z0-9_А-Яа-яЁё ]+"),
-                                parseInt(request.getParameter("Body")),
-                                Double.parseDouble(request.getParameter("Price").replace(",", ".")),
-                                parseInt(request.getParameter("Year")),
-                                user.getId()
-                        );
+                        car = Car.getCar(user, request);
                     } else {
                         request.setAttribute(Message.MESSAGE, "Введите цену");
                         return null;
