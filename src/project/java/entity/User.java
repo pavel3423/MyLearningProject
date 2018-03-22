@@ -1,5 +1,7 @@
 package project.java.entity;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.Serializable;
 import java.util.Objects;
 

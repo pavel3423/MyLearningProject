@@ -19,18 +19,11 @@ import java.util.List;
 public class CommandAddCar extends Action {
     @Override
     public Action execute(HttpServletRequest request, HttpServletResponse response) throws ParseException, SQLException, NoSuchPaddingException, NoSuchAlgorithmException, IOException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        User user = checkUserSession(request);
         if (user == null) {
-            session.setAttribute(Message.MESSAGE, "Войдите чтобы добавить автомобиль");
             return Actions.LOGIN.command;
         }
-        List<CarClass> carClasses = DAO.getDAO().carClass.getAll();
-        request.setAttribute("carClasses", carClasses);
-        List<Year> years = DAO.getDAO().year.getAll();
-        request.setAttribute("years", years);
-        List<Brand> brands = DAO.getDAO().brand.getAll();
-        request.setAttribute("brands", brands);
+        setRequestAttribute(request);
         if (FormUtil.isPost(request)) {
             Car car;
             try {
@@ -45,5 +38,25 @@ public class CommandAddCar extends Action {
         } else {
             return null;
         }
+    }
+
+    private User checkUserSession(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        if (user != null) {
+            return user;
+        } else {
+            request.setAttribute(Message.MESSAGE, "Войдите чтобы добавить автомобиль");
+            return user;
+        }
+    }
+
+    private void setRequestAttribute(HttpServletRequest request) throws SQLException {
+        List<CarClass> carClasses = DAO.getDAO().carClass.getAll();
+        request.setAttribute("carClasses", carClasses);
+        List<Year> years = DAO.getDAO().year.getAll();
+        request.setAttribute("years", years);
+        List<Brand> brands = DAO.getDAO().brand.getAll();
+        request.setAttribute("brands", brands);
     }
 }

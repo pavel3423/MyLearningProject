@@ -27,7 +27,7 @@ public class CommandProfile extends Action {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (user == null) {
-            session.setAttribute(Message.MESSAGE, "Войдите чтобы просмотреть профиль");
+            request.setAttribute(Message.MESSAGE, "Войдите чтобы просмотреть профиль");
             return Actions.LOGIN.command;
         }
         if (user.getRolesID() == 1) {

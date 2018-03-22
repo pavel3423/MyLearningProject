@@ -19,7 +19,7 @@ public class CommandAllCarsUser extends Action {
         User user = (User) session.getAttribute("user");
         request.setAttribute("user", user);
         if (user == null) {
-            session.setAttribute(Message.MESSAGE, "Войдите чтобы просмотреть объявления");
+            request.setAttribute(Message.MESSAGE, "Войдите чтобы просмотреть объявления");
             return Actions.LOGIN.command;
         }
         List<Car> cars = null;
