@@ -3,7 +3,6 @@
 <p>${message}</p>
 <form class="form-horizontal" action="do?command=addCar" method="POST">
     <fieldset>
-
         <!-- Form Name -->
         <legend>Добавить автомобиль</legend>
 
